@@ -154,8 +154,8 @@ tbody tr:hover td{background:var(--surface2);}
   <div class="filter-group">
     <div class="filter-label">Result window</div>
     <div class="pills">
-      <button class="pill active" id="pill-final" onclick="setPTW('final')">Final only</button>
-      <button class="pill" id="pill-ptw" onclick="setPTW('ptw')">With post-treatment window</button>
+      <button class="pill" id="pill-final" onclick="setPTW('final')">Final only</button>
+      <button class="pill ptw-on" id="pill-ptw" onclick="setPTW('ptw')">With post-treatment window</button>
     </div>
   </div>
 </div>
@@ -229,7 +229,7 @@ const BUILT_IN=[
   {name:'TikTok Baseline - Jan 2026',ch:'TikTok',f:'Mid',s:'Promo',start:'1/28/26',ptw:'2/24/26',sp:48673,dtcF:0.22,dtcP:0.73,nnF:0.07,nnP:0.49,blF:0.31,blP:0.96,uF:3013,uP:9547,nF:1561,nP:1925,aF:0,aP:0},
 ];
 
-let DATA=BUILT_IN,aCh='ALL',aSea='ALL',aPTW='final';
+let DATA=BUILT_IN,aCh='ALL',aSea='ALL',aPTW='ptw';
 const isPTW=()=>aPTW==='ptw';
 function gV(r,fk,pk){if(isPTW()&&r.ptw){const v=r[pk];return(v&&v>0)?v:r[fk];}return r[fk];}
 const getDTC=r=>gV(r,'dtcF','dtcP');
